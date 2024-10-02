@@ -4,11 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>S4.API</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body>
 
-    <div id="joke"></div>
-    <button id="joke-next">Next Joke</button>
+    <div class="container-fluid weather"><p>Avui: parcialment ennuvolat</p></div>
+
+    <div class="container-fluid joke-container">
+        <h2 mb-4>
+            Preparat per riure? 🤣
+        </h2>
+        <div id="joke" class="joke" ></div>
+        <button type="button" class="btn btn-outline-info" id="joke-next">Següent acudit </button>
+
+    </div>
 
     <script src="index.js"></script>
     

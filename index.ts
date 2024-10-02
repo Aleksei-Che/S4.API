@@ -1,3 +1,5 @@
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
 interface Joke {
     joke: string,
     id: string,
