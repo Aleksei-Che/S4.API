@@ -6,6 +6,14 @@ interface Joke {
     status: number
 }
 
+interface JokeReport {
+    joke: string,
+    score: number,
+    date: string
+}
+
+const reportAcudits: JokeReport[] = [];
+
 async function fetchJoke(): Promise<Joke> {
 
     const response = await fetch('https://icanhazdadjoke.com/', {
@@ -31,6 +39,40 @@ async function updateJoke(): Promise<void> {
     
 }
 
+function vote(score: number): void {
+    const jokeElement = document.getElementById("joke") as HTMLElement;
+    const currentJoke = jokeElement.innerHTML;
+    const dateISO = new Date().toISOString();
+
+    reportAcudits.push({
+        joke: currentJoke,
+        score: score,
+        date: dateISO
+    });
+
+    console.log(reportAcudits);
+}
+
+function setupVoting(): void {
+    console.log("setupVoting called!")
+    const voteButtons = document.querySelectorAll('.btn-vote') as NodeListOf<HTMLButtonElement>;
+    console.log(voteButtons);
+
+    if(voteButtons.length === 3) {
+        voteButtons[1].addEventListener('click', () => vote(2));
+        voteButtons[0].addEventListener('click', () => vote(1));
+        voteButtons[2].addEventListener('click', () => vote(3));
+        console.log("Voting buttons set up successfully!");
+    } else {
+        console.error("Error: Voting buttons not founs or incomplete")
+    }
+
+    
+
+}
+
+
+
 function setUpButton(): void {
     const nextButton = document.getElementById("joke-next") as HTMLButtonElement;
     nextButton.addEventListener('click', updateJoke);
@@ -39,5 +81,6 @@ function setUpButton(): void {
 
 window.addEventListener('DOMContentLoaded', ()=>{
     updateJoke();
-    setUpButton()
+    setUpButton();
+    setupVoting();
 })

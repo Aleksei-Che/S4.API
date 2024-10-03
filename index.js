@@ -1,4 +1,5 @@
 "use strict";
+// import 'bootstrap/dist/css/bootstrap.min.css';
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+const reportAcudits = [];
 function fetchJoke() {
     return __awaiter(this, void 0, void 0, function* () {
         const response = yield fetch('https://icanhazdadjoke.com/', {
@@ -32,6 +34,31 @@ function updateJoke() {
         }
     });
 }
+function vote(score) {
+    const jokeElement = document.getElementById("joke");
+    const currentJoke = jokeElement.innerHTML;
+    const dateISO = new Date().toISOString();
+    reportAcudits.push({
+        joke: currentJoke,
+        score: score,
+        date: dateISO
+    });
+    console.log(reportAcudits);
+}
+function setupVoting() {
+    console.log("setupVoting called!");
+    const voteButtons = document.querySelectorAll('.btn-vote');
+    console.log(voteButtons);
+    if (voteButtons.length === 3) {
+        voteButtons[1].addEventListener('click', () => vote(2));
+        voteButtons[0].addEventListener('click', () => vote(1));
+        voteButtons[2].addEventListener('click', () => vote(3));
+        console.log("Voting buttons set up successfully!");
+    }
+    else {
+        console.error("Error: Voting buttons not founs or incomplete");
+    }
+}
 function setUpButton() {
     const nextButton = document.getElementById("joke-next");
     nextButton.addEventListener('click', updateJoke);
@@ -39,4 +66,5 @@ function setUpButton() {
 window.addEventListener('DOMContentLoaded', () => {
     updateJoke();
     setUpButton();
+    setupVoting();
 });

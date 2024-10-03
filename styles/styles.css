@@ -39,3 +39,19 @@ body {
     margin-bottom: 20px;
 
 }
+
+.btn-vote{
+    border: none;
+    background: none;
+    font-size: 40px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.btn-vote:focus{
+    outline: none;
+}
+
+.btn-vote:hover{
+    transform: scale(1.1)
+}
