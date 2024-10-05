@@ -2,7 +2,7 @@
 
 ## Description
 
-This project of jokes will make your day. Start your morning with a little bit of humor. Don't forget to rate the jocs. And pay attention on current weather forecast, just to be prepared and informed of condiyions outside the window.
+This project of jokes will make your day. Start your morning with a little bit of humor. Don't forget to rate the jocs. And pay attention on current weather forecast, just to be prepared and informed of conditions outside the window.
 
 !![Screenshot](img/screenshot.jpg)
 
@@ -28,8 +28,14 @@ This project of jokes will make your day. Start your morning with a little bit o
 ## Installation
 
 1. Clone this repository -> [git clone](https://github.com/Aleksei-Che/S4.API)
-2. Navigate to the project directory: cd S4.API
-3. Install the dependencies: npm install
+2. **Navigate to the project directory**:
+    ```bash
+    cd 3.1-Bases-de-Dades
+    ```
+3. **Install the dependencies**:
+    ```bash
+    npm install
+    ```
 
 ## Execution
 
@@ -42,9 +48,9 @@ This project of jokes will make your day. Start your morning with a little bit o
 
 This project utilizes the following APIs:
 
-[icanhazdadjoke](https://icanhazdadjoke.com/api) - for fetching random dad jokes
-[Chuck Norris API](https://api.chucknorris.io/) - for fetching Chuck Norris jokes
-[OpenWeatherMap](https://openweathermap.org/api) - for fetching current weather data
+1. [icanhazdadjoke](https://icanhazdadjoke.com/api) - for fetching random dad jokes
+2. [Chuck Norris API](https://api.chucknorris.io/) - for fetching Chuck Norris jokes
+4. [OpenWeatherMap](https://openweathermap.org/api) - for fetching current weather data
 
 ## Contribition
 
