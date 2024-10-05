@@ -48,9 +48,9 @@ This project of jokes will make your day. Start your morning with a little bit o
 
 This project utilizes the following APIs:
 
-[icanhazdadjoke](https://icanhazdadjoke.com/api) - for fetching random dad jokes
-[Chuck Norris API](https://api.chucknorris.io/) - for fetching Chuck Norris jokes
-[OpenWeatherMap](https://openweathermap.org/api) - for fetching current weather data
+1. [icanhazdadjoke](https://icanhazdadjoke.com/api) - for fetching random dad jokes
+2. [Chuck Norris API](https://api.chucknorris.io/) - for fetching Chuck Norris jokes
+4. [OpenWeatherMap](https://openweathermap.org/api) - for fetching current weather data
 
 ## Contribition
 
